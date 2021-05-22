@@ -1,0 +1,23 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+
+@{
+
+    switch (ViewBag.Section)
+    {
+        case "registered":
+            await Html.RenderPartialAsync("_RegisterView");
+            break;
+
+        case "subscribed":
+            await Html.RenderPartialAsync("_SubscribeView");
+            break;
+    }
+}
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
